@@ -1,0 +1,12 @@
+# Webフレームワークとサーバー
+fastapi
+uvicorn[standard]
+
+# Google Cloud Vertex AI SDK
+google-cloud-aiplatform
+google-genai==1.20.0
+
+# .envファイル読み込み用
+python-dotenv
+
+pydantic
