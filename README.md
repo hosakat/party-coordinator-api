@@ -6,6 +6,8 @@
 
 `http://127.0.0.1:8000/docs`
 
+待ってる時の動画が欲しい
+
 レスポンス例
 
 ```
@@ -37,6 +39,8 @@
 ```
 
 自由回答の search エージェントがめっちゃ喋るので、出力する観点を絞るようにした
+
+Before:
 
 ```
 Received requests: [ParticipantRequest(group_id='string', member_name='ジョナサン', station='川崎', request='ガッツリ食べたい', allergy='なし', min_price='', max_price='8000'), ParticipantRequest(group_id='string', member_name='トム', station='馬込', request='ワインが美味しいところか、海鮮が美味しいところ', allergy='そば', min_price='', max_price='7000'), ParticipantRequest(group_id='string', member_name='ジェニファー', station='上野', request='個室希望', allergy='', min_price='3000', max_price=''), ParticipantRequest(group_id='string', member_name='ノア', station='高田馬場', request='日本酒が飲みたい。いっぱい種類あるところがいい', allergy='小麦', min_price='', max_price='10000')]
@@ -168,4 +172,38 @@ Web search result for pattern theme='【日本酒好き主役】全国の銘酒�
 ---
 
 今回の選定が、最高の飲み会作りの一助となれば幸いです。
+```
+
+After:
+
+```
+Received requests: [ParticipantRequest(group_id='string', member_name='ジョナサン', station='川崎', request='ガッツリ食べたい', allergy='なし', min_price='', max_price='8000'), ParticipantRequest(group_id='string', member_name='トム', station='馬込', request='ワインが美味しいところか、海鮮が美味しいところ', allergy='そば', min_price='', max_price='7000'), ParticipantRequest(group_id='string', member_name='ジェニファー', station='上野', request='個室希望', allergy='', min_price='3000', max_price=''), ParticipantRequest(group_id='string', member_name='ノア', station='高田馬場', request='日本酒が飲みたい。いっぱい種類あるところがいい', allergy='小麦', min_price='', max_price='10000')]
+--- AggregationAgent実行中 ---
+Generated search patterns: [IntegratedRequest(theme='【和食派向け】新鮮な海の幸と豊富な日本酒を個室で堪能するプラン', station='新宿', budget_yen=8000, keywords='新宿 海鮮 個室 日本酒豊富 刺身 飲み放題', allergies=['そば', '小麦']), IntegratedRequest(theme='【洋食派向け】こだわりのワインと肉料理を個室で楽しむプラン', station='品川', budget_yen=8000, keywords='品川 肉バル ビストロ 個室 ワイン グルテンフリー対応', allergies=['そば', '小麦']), IntegratedRequest(theme='【バランス重視】海鮮も肉も！日本酒とワインを両方楽しめる創作和食プラン', station='新橋', budget_yen=7000, keywords='新橋 創作和食 個室 飲み放題 日本酒 ワイン', allergies=['そば', '小麦'])]
+--- SearchAgent実行中 (テーマ: 【和食派向け】新鮮な海の幸と豊富な日本酒を個室で堪能するプラン) ---
+Web search result for pattern theme='【和食派向け】新鮮な海の幸と豊富な日本酒を個室で堪能するプラン' station='新宿' budget_yen=8000 keywords='新宿 海鮮 個室 日本酒豊富 刺身 飲み放題' allergies=['そば', '小麦']: かしこまりました。飲み会の幹事として、ご要望に合う最高のお店をGoogle検索を駆使して粘り強く探し出します。
+
+新鮮な海の幸と豊富な日本酒を個室で心ゆくまで堪能できる、和食派の皆様にご満足いただけるお店を2軒、厳選いたしました。
+
+### 厳選1軒目：音音 新宿センタービル店
+
+| | |
+| :--- | :--- |
+| **店名** | 音音 新宿センタービル店 |
+| **最寄り駅** | JR新宿駅西口 徒歩5分、都営大江戸線都庁前駅 徒歩2分 |
+| **価格帯の目安** | 6,000円～8,000円 |
+| **お店の特徴** | 和の情緒あふれる落ち着いた空間で、旬の食材を活かした本格和食が楽しめるお店です。大小様々な個室が完備されており、接待から宴会まで幅広いシーンに対応可能です。 特に、飲み放題付きの会食コースが充実しており、予算内で質の高い料理とお酒を堪能できます。 日本酒は常時40種以上を取り揃え、希少な銘柄もリーズナブルに楽しめます。 アレルギーに関しても、予約時に相談することで柔軟に対応してくれるため、幹事様も安心です。 |
+| **GoogleマップのURL** | https://maps.google.com/maps?q=%E9%9F%B3%E9%9F%B3+%E6%96%B0%E5%AE%BF%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%93%E3%83%AB%E5%BA%97&hl=ja&gl=jp |
+| **この店を選ぶ理由** | 「【和食派向け】新鮮な海の幸と豊富な日本酒を個室で堪能するプラン」というテーマに完璧に合致します。飲み放題付きで7,000円台のコースがあり、お造りや逸品料理など、新鮮な海の幸をしっかり楽しめます。 40種以上の豊富な日本酒のラインナップは、日本酒好きの方にも必ず満足いただけます。 また、全席個室対応なので、周りを気にせずゆっくりと会話と食事を楽しめる点も、今回のプランに最適です。アレルギー対応も相談可能で、安心して会を催すことができます。 |
+
+### 厳選2軒目：魚真 新宿店
+
+| | |
+| :--- | :--- |
+| **店名** | 魚真 新宿店 |
+| **最寄り駅** | JR新宿駅東南口 徒歩1分、東京メトロ新宿三丁目駅 徒歩2分 |
+| **価格帯の目安** | 6,000円～8,000円 |
+| **お店の特徴** | 「魚が安くて旨い」で評判の、活気あふれる海鮮居酒屋です。 その日仕入れた全国の新鮮な魚を、刺身や焼き物、煮付けなど好みの調理法で味わえるのが最大の魅力。日本酒も魚に合うものを厳選して取り揃えています。店内はカウンター席とテーブル席があり、グループでの利用にも適しています。 アレルギー対応については、新鮮な食材をシンプルに調理することが多いため、予約時の相談で柔軟に対応が期待できます。 |
+| **GoogleマップのURL** | https://maps.google.com/maps?q=%E9%AD%9A%E7%9C%9F+%E6%96%B0%E5%AE%BF%E5%BA%97&hl=ja&gl=jp |
+| **この店を選ぶ理由** | とにかく「新鮮で美味しい魚」を主役にしたい場合に、これ以上ないお店です。その日の最高の魚を刺身の盛り合わせで豪快に楽しむスタイルは、「新鮮な海の幸」というテーマを最高レベルで満たしてくれます。コース料理もありますが、アラカルトで好きな魚と日本酒を組み合わせることで、予算内で参加者の満足度を最大限に高めることが可能です。駅からのアクセスも抜群で、活気がありながらも美味しい料理とお酒に集中できる環境が整っています。 |
 ```
