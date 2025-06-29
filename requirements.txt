@@ -9,4 +9,4 @@ google-genai==1.20.0
 # .envファイル読み込み用
 python-dotenv
 
-pydantic
+pydantic>=2.0,<3.0
