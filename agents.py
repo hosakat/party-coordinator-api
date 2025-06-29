@@ -15,10 +15,6 @@ load_dotenv()
 PROJECT_ID = os.getenv("GCP_PROJECT_ID")
 LOCATION = os.getenv("GCP_LOCATION")
 
-# デバッグ用に値を確認
-print(f"Using Project ID: {PROJECT_ID}")
-print(f"Using Location: {LOCATION}")
-
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="./party-coordinator-462715.json"
 
 # # 通常のモデル
