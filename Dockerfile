@@ -6,8 +6,8 @@ WORKDIR /root/app
 
 
 RUN mkdir app
-#main.pyを/root/appに以下にコピー。
-COPY main.py ./
+# Copy local code to the container image.
+COPY . ./
 #requirements.txtをコンテナ内のroot配下にコピー。
 COPY requirements.txt requirements.txt
 # コンテナ起動時にモジュールをインストール。
