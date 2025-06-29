@@ -3,7 +3,7 @@ from typing import List, Optional
 
 # --- 追加: 参加者一人の要望を表すモデル ---
 class ParticipantRequest(BaseModel):
-    group_id: str = Field(..., alias="groupId", description="リクエストをまとめるためのグループID")
+    # group_id: str = Field(..., alias="groupId", description="リクエストをまとめるためのグループID")
     member_name: str = Field(..., alias="memberName", description="参加者の名前")
     station: str = Field(..., description="希望の最寄り駅")
     request: str = Field(..., description="お店選びに関する自由記述の要望")
