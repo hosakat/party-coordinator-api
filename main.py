@@ -79,7 +79,7 @@ async def search_restaurants(requests: List[ParticipantRequest] = Body(...)):
         raise HTTPException(status_code=500, detail=f"An internal error occurred: {str(e)}")
 
 # ローカルでテスト実行するためのコード
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8080))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+# if __name__ == "__main__":
+#     import uvicorn
+#     port = int(os.getenv("PORT", 8080))
+#     uvicorn.run(app, host="0.0.0.0", port=port)
