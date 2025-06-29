@@ -16,9 +16,9 @@ app = FastAPI(
     version="1.1.0"
 )
 
-# 環境変数のチェック
-if not os.getenv("GCP_PROJECT_ID") or not os.getenv("GCP_LOCATION"):
-    raise RuntimeError("GCP_PROJECT_ID and GCP_LOCATION must be set in .env file")
+# # 環境変数のチェック
+# if not os.getenv("GCP_PROJECT_ID") or not os.getenv("GCP_LOCATION"):
+#     raise RuntimeError("GCP_PROJECT_ID and GCP_LOCATION must be set in .env file")
 
 @app.post("/search", response_model=SearchResponse)
 async def search_restaurants(requests: List[ParticipantRequest] = Body(...)):
@@ -80,6 +80,6 @@ async def search_restaurants(requests: List[ParticipantRequest] = Body(...)):
 
 # ローカルでテスト実行するためのコード
 # if __name__ == "__main__":
-#     import uvicorn
-#     port = int(os.getenv("PORT", 8080))
-#     uvicorn.run(app, host="0.0.0.0", port=port)
+    # import uvicorn
+    # port = int(os.getenv("PORT", 8080))
+    # uvicorn.run(app, host="0.0.0.0", port=port)
