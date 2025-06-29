@@ -42,8 +42,7 @@ common_config = {
     "temperature": 0.1,
     "top_p": 0.4,
     "top_k": 10,
-    "max_output_tokens": 65535,  # gemini-2.5-pro-preview-03-25モデル
-    # "model": "gemini-1.5-pro-002",
+    "max_output_tokens": 65535,
     # "model": "gemini-2.0-flash-001",
     # "model": "gemini-2.5-pro-preview-03-25",
     "model": "gemini-2.5-pro"
